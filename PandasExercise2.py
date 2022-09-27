@@ -83,3 +83,29 @@ df['film_daily_rental_rate'] = df[['film_rental_rate', 'film_rental_duration']].
 df['film_daily_rental_rate2'] = df['film_rental_rate'] / df['film_rental_duration']
 
 df['film_daily_rental_rate2'].head()
+
+df['film_daily_rental_rate'].mean()
+ax = df['film_daily_rental_rate'].plot(kind='kde', figsize=(14,6))
+ax.axvline(df['film_daily_rental_rate'].mean(), color='red')
+
+#df.loc[df['film_daily_rental_rate'].sort_values()].head(10)
+df.sort_values(['film_daily_rental_rate'], ascending = True).head(10)
+
+
+df.loc[df['film_daily_rental_rate'] == df['film_daily_rental_rate'].min()].head(10)
+
+
+df.loc[df['film_daily_rental_rate'] == df['film_daily_rental_rate'].max()].head(10)
+
+#df.loc[df['film_daily_rental_rate'] == df['film_daily_rental_rate'].max()].head(10)
+
+len(df.loc[df['rental_store_city'] == 'Lethbridge'])#.count()
+
+df.loc[df['rental_store_city'] == 'Lethbridge', 'film_title'].value_counts().plot(kind='bar', figsize=(14,6))
+
+df.loc[(df['rental_store_city'] == 'Woodridge') & (df['film_rental_duration'] > 5)].shape[0]#['rental_days'] > '5.0'] # quando são duas sens/ condiçoes temos de separar com operadores booleanos!
+
+df.loc[(df['rental_st'])]
+       
+
+# fazer as coisas a funcionar .. em tempo real
