@@ -105,7 +105,7 @@ df.loc[df['rental_store_city'] == 'Lethbridge', 'film_title'].value_counts().plo
 
 df.loc[(df['rental_store_city'] == 'Woodridge') & (df['film_rental_duration'] > 5)].shape[0]#['rental_days'] > '5.0'] # quando são duas sens/ condiçoes temos de separar com operadores booleanos!
 
-df.loc[(df['rental_st'])]
+df.loc[(df['store_id']==2) & (df['film_replacement_cost'] < 10.99)].shape[0]
        
 
 # fazer as coisas a funcionar .. em tempo real
